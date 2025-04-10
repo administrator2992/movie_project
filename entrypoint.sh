@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
 
-rm -rf staticfiles/
-
 # Create database if missing
 if [ ! -f "/app/db.sqlite3" ]; then
     touch "/app/db.sqlite3"
