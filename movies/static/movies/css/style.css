@@ -1,0 +1,141 @@
+.container {
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.search-bar input {
+    width: auto;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.movie-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.movie-card {
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.movie-card:hover {
+    transform: translateY(3px);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Style as button while maintaining link semantics */
+.back-button {
+    /* display: inline-block; */
+    padding: 2px 4px;
+    font-size: 11pt;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    color: #505050;
+    margin: 0 0;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-line {
+    border: 0;
+    height: 1px;
+    background: #dad4d4;
+    margin: 1rem 0;
+    opacity: 50%;
+}
+
+/* Set Roboto as base font */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+/* Headings with Roboto weights */
+h1 {
+    font-weight: 500;
+    margin: 0.5rem auto;
+}
+
+h2 {
+    font-weight: 450;
+    margin: 0.5rem auto;
+}
+
+/* Movie cards */
+.movie-card h2 {
+    font-weight: 450;
+    margin-bottom: 0.1rem;
+}
+
+.rating {
+    margin-top: 1rem;
+}
+
+.detail-head p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.detail-poster {
+    max-width: 300px;
+    margin: 1rem 0;
+}
+
+.detail-list {
+    line-height: 2;
+}
+
+.basic-info {
+    max-width: 800px;
+}
+
+.basic-info h2 {
+    margin-bottom: 0;
+}
+
+.synopsis {
+    line-height: 1.5;
+    margin-top: 2rem;
+}
+
+.synopsis h2 {
+    margin-bottom: 0;
+}
+
+.synopsis p {
+    margin: 0 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.movie-meta {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .movie-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .poster-detail {
+        position: static;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

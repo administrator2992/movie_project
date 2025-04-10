@@ -1,0 +1,42 @@
+<!-- include base.html and load static directory -->
+{% extends 'movies/base.html' %}
+{% load static %}
+
+<!-- import js only for movie list -->
+{% block scripts %}
+    {{ block.super }}  <!-- Keep parent scripts -->
+    <script src="{% static 'js/search.js' %}" defer></script>
+{% endblock %}
+
+<!-- start to add content -->
+{% block content %}
+<!-- search bar -->
+<div class="search-bar">
+    <input type="text" id="searchInput" 
+           placeholder="Search movies..." 
+           aria-label="Search movies by name">
+</div>
+
+<hr class="custom-line">
+<h2>Popular Movies this month</h2>
+
+<!-- movie list container -->
+<div class="movie-grid">
+    <!-- loop movies -->
+    {% for movie in movies %}
+    <!-- show each movie -->
+    <a href="{% url 'movie_detail' movie.pk %}" class="movie-card">
+        <img src="{{ movie.img_path }}" 
+             alt="{{ movie.name }} poster" 
+             class="movie-poster">
+        <div class="movie-info">
+            <h2>{{ movie.name }}</h2>
+            {{ movie.duration }} min
+            <div class="rating">User Rating: {{ movie.user_rating }}</div>
+        </div>
+    </a>
+    {% endfor %}
+    <!-- end loop -->
+</div>
+{% endblock %}
+<!-- end content -->

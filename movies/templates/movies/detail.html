@@ -1,0 +1,45 @@
+<!-- include base.html and load static directory -->
+{% extends 'movies/base.html' %}
+{% load static %}
+
+<!-- start to add content -->
+{% block content %}
+<!-- button -->
+<a href="{% url 'movie_list' %}" class="back-button" role="button" aria-label="Return to movie listings">
+    Back
+</a>
+
+<!-- detail view container -->
+<div class="movie-detail">
+    <!-- title and mpaa -->
+    <div class="detail-head">
+        <h1>{{ movie.name }}</h1>
+        <p>({{ movie.mpaa_type }}: {{ movie.mpaa_label }})</p>
+    </div>
+    <hr class="custom-line">
+    <!-- poster and details container -->
+    <article class="movie-meta">
+        <!-- poster -->
+        <div class="poster-detail">
+            <img src="{{ movie.img_path }}" 
+                 alt="{{ movie.name }} poster" 
+                 class="detail-poster">
+        </div>
+        <!-- details and synopsis -->
+        <div class="basic-info">
+            <h2>Details</h2>
+            <div class="detail-list">
+                Genre: {{ movie.genre }} <br>
+                Language: {{ movie.language }} <br>
+                Duration: {{ movie.duration }} minutes <br>
+                User Rating: {{ movie.user_rating }} <br>
+            </div>
+            <div class="synopsis">
+                <h2>Synopsis</h2>
+                <p>{{ movie.description }}</p>
+            </div>
+        </div>
+    </article>
+</div>
+{% endblock %}
+<!-- end content -->

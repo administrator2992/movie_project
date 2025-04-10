@@ -1,0 +1,8 @@
+__pycache__/
+movie_project/__pycache__/
+movies/__pycache__/
+movies/migrations/
+.DS_Store
+staticfiles/
+db.sqlite3
+docker-compose.yml
